@@ -1,0 +1,100 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #35b929;
+    padding: 1rem;
+}
+
+.contenedor-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.boton-cerrar {
+    background-color: #35b929;
+}
+.boton-cerrar {
+    background-color: #35b929;
+}
+
+.boton-cerrar:hover {
+    background-color: #255329;
+    transform: translateY(-2px);
+}
+
+.boton-listar {
+    background-color: #35b929;
+}
+
+.boton-listar:hover {
+    background-color: #255329;
+    transform: translateY(-2px);
+}
+
+/* Resto de estilos existentes */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #9eec8b 0%, #4c704a 100%);
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.contenedor-principal {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.formulario {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #266c33;
+}
+
+label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #dfe6e9;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.boton-verde {
+    background-color: #35b929;
+}
+
+.boton-verde:hover {
+    background-color: #255329;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guías de Aprendizaje</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos3.css') }}">
+    <style>
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #04350bff;
+            color: white;
+        }
+
+        td a img {
+            width: 24px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="contenedor-nav">
+            <a href="{{ url_for('cerrar_sesion') }}" class="boton boton-cerrar">Cerrar sesión</a>
+            <a href="{{ url_for('subir_guia') }}" class="boton boton-subir">Subir guías</a>
+        </div>
+    </nav>
+
+    <div class="contenedor-principal">
+        <h2 style="text-align: center; margin: 1rem 0;">Listado de Guías de Aprendizaje</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre Guía</th>
+                    <th>Descripción</th>
+                    <th>Programa</th>
+                    <th>Instructor</th>
+                    <th>Regional</th>
+                    <th>Fecha</th>
+                    <th>Ver PDF</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for guia in guias %}
+                <tr>
+                    <td>{{ guia.nombre_guia }}</td>
+                    <td>{{ guia.descripcion }}</td>
+                    <td>{{ guia.programa_formacion.nombre }}</td>
+                    <td>{{ guia.instructor.nombre_completo }}</td>
+                    <td>{{ guia.instructor.regional }}</td>
+                    <td>{{ guia.fecha_subida.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>
+                        <a href="{{ url_for('ver_pdf', nombre_archivo=guia.archivo_pdf) }}" target="_blank">
+                            <img src="{{ url_for('static', filename='img/pdf-icon.png') }}" alt="Ver PDF">
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
